@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  each key ,i in json
+    each contributor in key.contributors
+     if i % 5 === 0
+      .row
+     else
+        .col-lg-3.col-sm-6
+          .card.hovercard
+            .avatar
+              img(src=  key.thumbnailUrl)
+          .info
+           .title
+            td Title : #{key.title}
+          .desc
+            a(href='/artists/' + contributor.id) #{contributor.fc}

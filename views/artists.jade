@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+
+      .jumbotron
+        div
+          table
+            thead
+            each key in json
+             h1  Artist Details
+             h2 !{key.fc}
+             p  !{key.date}
+             p  Born: !{key.birth.place.name}
+             p Total works:
+               a(href='/artworks/' + key.id) !{key.totalWorks} - View Artwork
+             p For more information about this artist visit:
+               a(href= key.url) This page
