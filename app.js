@@ -9,6 +9,8 @@ var jquery = require('jquery');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var artists = require('./routes/artists');
+var movement = require('./routes/movement');
+
 var artworks = require('./routes/artworks');
 var compression = require('compression');
 
@@ -36,6 +38,8 @@ fs.readdirSync(__dirname + '/models').forEach(function(filename){
 
 app.use('/', routes);
 app.use('/artists',artists);
+app.use('/movement',movement);
+
 app.use('/artworks',artworks);
 app.get('/search', function(req, res) {
 

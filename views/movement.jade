@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .container
+
+  each key in json
+     .col-lg-6.well
+       table
+         thead
+
+          h2  Artist Details
+          h3 !{key.fc}
+          p  !{key.date}
+          p  Born: !{key.birth.place.name}
+          p  Participated in the <b> !{result} </b> Movement
+          p Total works:
+            a(href='/artworks/' + key.id) !{key.totalWorks} - View Artwork
+          p For more information about this artist visit:
+            a(href= key.url) This page
