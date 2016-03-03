@@ -10,3 +10,8 @@ block content
        h1 Welcome to the Tate Gallery
        p You can browse by category
        p Or by using the search bar
+       each key , i in json
+        .panel-footer
+         .span
+          p
+           a(href='/movement/' + key) #{key}

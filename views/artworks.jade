@@ -13,6 +13,9 @@ block content
             img(src=  key.thumbnailUrl)
           .info
            .title
-            td Title : #{key.title}
+            td <b>Title</b> : #{key.title}
+           p <b>Medium</b> : #{key.medium}
+           p <b>Dimensions</b>: #{key.width}#{key.units} x #{key.height}#{key.units}
           .desc
-            a(href='/artists/' + contributor.id) #{contributor.fc}
+            p <b>Artist</b>:
+             a(href='/artists/' + contributor.id) #{contributor.fc}

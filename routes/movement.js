@@ -6,13 +6,17 @@ var Thread = require('../models/artists.js');
 var Thread = require('../models/artworks.js');
 
 
-/* GET artists listing. */
-router.get('/', function(req, res, next) {
-  mongoose.model('artists').find().distinct('movements.name',function(err, name) {
+router.get('/:id', function(req, res, next) {
+  var result = req.params.id;
+  mongoose.model('artists').find({
+    'movements.name': req.params.id
+  }, function(err, artists) {
 
-    res.render('index', {
-      json: name
+
+    res.render('movement', {
+      json: artists,result
     });
+
 
   });
 });
