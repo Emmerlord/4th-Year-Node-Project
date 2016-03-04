@@ -1,15 +1,14 @@
 doctype html
 html
   head
-    title= title
+    title  title
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     script(src='/javascripts/jquery-1.12.1.min.js')
     script(src='https://code.jquery.com/ui/jquery-ui-git.js')
     script(src='/javascripts/search.js')
-
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
 
     body
      .navbar
@@ -30,13 +29,13 @@ html
                  ul.nav.navbar-nav
                    li.active
                      a(href='/') Home
+                   li
+                     a(href='/artists/random') Random Artist
                  ul.nav.navbar-nav.navbar-right.input-group
                    li
                       p Search :
                        input#search-query.foo1.foo2
                // /.nav-collapse
-
-
     .container
       .main-content
         block content

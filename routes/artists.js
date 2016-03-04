@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-
+var random = require('mongoose-simple-random');
 var Thread = require('../models/artists.js');
 var Thread = require('../models/artworks.js');
 
@@ -16,6 +16,20 @@ router.get('/', function(req, res, next) {
 
   });
 });
+
+/* GET artists listing. */
+router.get('/random', function(req, res, next) {
+
+mongoose.model('artists').findOneRandom(function(err, artists) {
+    if (!err) {
+      res.render('random', {
+        json: artists
+      });
+    }
+  });
+
+  });
+
 
 
 /* GET artists listing. */

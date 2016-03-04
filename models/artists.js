@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var random = require('mongoose-simple-random');
 var Schema = mongoose.Schema;
 
 var movements = new Schema({
@@ -24,5 +25,6 @@ artworks : {
   ref:'artworks'
           }
 });
+artistsSchema.plugin(random);
 
 mongoose.model('artists', artistsSchema);

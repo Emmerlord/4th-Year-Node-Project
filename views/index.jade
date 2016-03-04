@@ -6,12 +6,26 @@ extends layout
 block content
   .container
 
-      .jumbotron
-       h1 Welcome to the Tate Gallery
-       p You can browse by category
-       p Or by using the search bar
-       each key , i in json
-        .panel-footer
-         .span
-          p
-           a(href='/movement/' + key) #{key}
+  .jumbotron
+    pre
+     code
+       | /$$$$$$$$          /$$                      /$$$$$$            /$$ /$$
+       ||__  $$__/         | $$                     /$$__  $$          | $$| $$
+       |   | $$  /$$$$$$  /$$$$$$    /$$$$$$       | $$  \__/  /$$$$$$ | $$| $$  /$$$$$$   /$$$$$$  /$$   /$$
+       |   | $$ |____  $$|_  $$_/   /$$__  $$      | $$ /$$$$ |____  $$| $$| $$ /$$__  $$ /$$__  $$| $$  | $$
+       |   | $$  /$$$$$$$  | $$    | $$$$$$$$      | $$|_  $$  /$$$$$$$| $$| $$| $$$$$$$$| $$  \__/| $$  | $$
+       |   | $$ /$$__  $$  | $$ /$$| $$_____/      | $$  \ $$ /$$__  $$| $$| $$| $$_____/| $$      | $$  | $$
+       |   | $$|  $$$$$$$  |  $$$$/|  $$$$$$$      |  $$$$$$/|  $$$$$$$| $$| $$|  $$$$$$$| $$      |  $$$$$$$
+       |   |__/ \_______/   \___/   \_______/       \______/  \_______/|__/|__/ \_______/|__/       \____  $$
+       |                                                                                            /$$  | $$
+       |                                                                                            |  $$$$$$/
+       |                                                                                             \______/
+
+
+    p You can browse by category
+    p Or by using the search bar
+         each key , i in json
+          .panel-footer
+           .span
+            p
+             a(href='/movement/' + key) #{key}
